@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# --------------------------------------------------
+# Script   : condicionais
+# Descrição: Comparar valores que o usuário digita no terminal
+# Versão   : 1.0
+# Autor    : Augusto Alves Frazão
+# Data     : 19 de Feb de 2026 15:06:17
+# Licença  : GUN/GPL v3.0
+# --------------------------------------------------
+# Uso: Comparar valores
+# --------------------------------------------------
+
+clear
+
+## Messages
+
+read -p "Digite um número entre 1 a 10: " number
+
+## Tratar erros...
+
+# Verifica se é um número
+[[ ! $number =~ ^[0-9]+$ ]] && echo "
+ERROR! não é um número.
+Caracter digitado: $number " && exit 1
+
+[[ $number -gt 10 || $number -le 0 ]] && echo "
+ERROR! número fora do escopo permitido.
+Número digitado: $number " && exit 1
+
+## Respostas normais...
+
+# igual à...
+[[ $number -eq 5 ]] && echo "
+Seu número é igual a 5! :O
+Número digitado: $number " && exit 0
+
+# less then ou menor ou igual à...
+[[ $number -lt 5 ]] && echo "
+Seu número é menor que 5! ;)
+Número digitado: $number " && exit 0
+
+# great then ou maior ou igual à...
+[[ $number -gt 5 ]] && echo "
+Seu número é maior que 5! ;-;
+Número digitado: $number " && exit 0

@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# --------------------------------------------------
+# Script   : arrays
+# Descrição: Script para teste de variáveis indexadas
+# Versão   : 1.0
+# Autor    : Augusto Alves Frazão
+# Data     : 20 de Feb de 2026 19:12:46
+# Licença  : GUN/GPL v3.0
+# --------------------------------------------------
+# Uso: Arrays
+# --------------------------------------------------
+
+clear
+
+## Variáveis indexadas - arrays
+fruta=("Banana" "Abacate" "Melão")
+
+# Retorno de valores conforme o índice da variável
+echo ${fruta[0]}
+echo ${fruta[1]}
+echo ${fruta[2]}
+
+# Retorno de todos os valores
+echo ${fruta[*]}
+
+# Retorna apenas do índeces
+echo ${!fruta[*]}
+
+## Arrays Associativos
+declare -A carro
+
+carro[vw]="Fusca"
+carro[fiat]="Toro"
+carro[toyota]="Corolla"
+
+echo ${carro[volkswagen]}
+echo ${carro[fiat]}
+echo ${carro[toyota]}
+
+echo ${!carro[*]}
+
+exit 0

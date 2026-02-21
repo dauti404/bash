@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# --------------------------------------------------
+# Script   : varIndexadas
+# Descrição: Script que possui variáveis indexadas como lista
+# Versão   : 1.0
+# Autor    : Augusto Alves Frazão
+# Data     : 19 de Feb de 2026 15:48:08
+# Licença  : GUN/GPL v3.0
+# --------------------------------------------------
+# Uso: Variáveis indexadas
+# --------------------------------------------------
+
+clear
+
+## Variáveis indexadas
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# --------------------------------------------------
+# Script   : PID
+# Descrição: Checa o PID da sessão do shell
+# Versão   : 1.0
+# Autor    : Augusto Alves Frazão
+# Data     : 19 de Feb de 2026 14:50:12
+# Licença  : GUN/GPL v3.0
+# --------------------------------------------------
+# Uso: Checar o PID
+# --------------------------------------------------
+
+clear
+
+sep="-----------------------------------------------"
+
+echo "
+Comparando os PID
+$sep
+PID da sessão do bash do script  : $$
+PID da sessão do bash do terminal: $PPID
+
+Retorno do PID dos processos
+$sep
+$(ps -p $$,$PPID -o pid=,user=,tty=,args=)
+"
+
+exit 0

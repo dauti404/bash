@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Variáveis
+data_atual=$( date +"%d de %b de %Y %T" )
+
+read -p "Digite a descrição do script: " descricao
+
+read -p "Digite o uso desse script: " uso
+
+read -p "Nome do autor do script: " autor
+
+read -p "Versão do script: " versao
+
+header="#!/usr/bin/env bash
+# --------------------------------------------------
+# Script   : $1
+# Descrição: $descricao
+# Versão   : $versao
+# Autor    : $autor
+# Data     : $data_atual
+# Licença  : GUN/GPL v3.0
+# --------------------------------------------------
+# Uso: $uso
+# --------------------------------------------------
+"
+
+# Testa se  passou o número certo de argumentos
+[[ $# -ne 1 ]] && echo "Erro! é preciso um nome de arquivo." && exit 1
+
+# Verifia se o arquivo existe
+[[ -f $1 ]] && echo "Esse arquivo já existe!" && exit 1
+
+# Adiciona a linha de hash bang inicial ao script
+# $1 - variável que captura o nome digitado pelo usuário
+echo "$header" > $1
+
+# Atribuí ao arquivo a função de executável
+chmod +x $1
+
+# Entra no script novo
+nano $1
+
+exit 0
